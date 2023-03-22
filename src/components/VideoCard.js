@@ -20,11 +20,20 @@ const VideoCard = ({info}) => {
     
   }
 
+  const shortenTitle = () => {
+    if (title.length > 60){
+      return title.substring(0,60)+'...'
+    }
+    else{
+      return title
+    }
+  }
+
   return (
-    <div className='flex flex-wrap m-2 p-2 w-60 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg'>
+    <div className='flex flex-wrap m-2 p-2 w-80 h-80 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg'>
       <img className='rounded-lg' alt='video-thumbnail' src={thumbnails.medium.url} />
       <ul className='m-1'>
-        <li className='px-1 font-size-sm font-medium'>{title}</li>
+        <li className='px-1 h-16 text-ellipsis overflow-hidden font-size-sm font-medium'>{shortenTitle(title)}</li>
         <li className='px-1 font-size-xs font-thin'>{channelTitle}</li>
         <li className='px-1 font-size-xs font-thin'>{views()}</li>
       </ul>
