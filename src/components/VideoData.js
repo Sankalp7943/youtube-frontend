@@ -24,10 +24,10 @@ const VideoData = ({info}) => {
   }
 
   return (
-    <div className='bg-gray-200 mx-10 p-5 shadow-lg rounded-lg w-3/5'>
+    <div className='bg-gray-200 mx-10 p-10 shadow-lg rounded-lg w-3/5'>
       <h2 className='my-2 font-bold text-2xl' >{videoTitle}</h2>
       <h3 className='my-2 font-medium text-xl'>{channelName}</h3>
-      <h3 className='my-2 font-medium text-l'>{videoDescription}</h3>
+      <h3 className='my-2 font-regular text-l'>{videoDescription}</h3>
     </div>
   )
 }

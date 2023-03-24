@@ -12,9 +12,10 @@ const VideoContainer = () => {
   const getVideos = async ()=>{
     const videosData = await fetch(YOUTUBE_VIDEOS_API)
     const videosDataJson = await videosData.json()
+    console.log("VIDEO DATA JSON", videosDataJson)
     setVideos(videosDataJson.items)
   }
-  if (videos.length===0){
+  if (videos===undefined || videos.length===0){
     return (
       <ShimmerCard />
     )

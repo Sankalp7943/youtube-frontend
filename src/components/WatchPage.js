@@ -23,7 +23,7 @@ const WatchPage = () => {
             allowFullScreen></iframe>
         </div>
         <VideoData info={videoID} />
-        <CommentsSection videoID={videoID} />
+        <CommentsSection />
     </div>
   )
 }
