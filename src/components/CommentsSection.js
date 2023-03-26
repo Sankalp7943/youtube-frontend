@@ -80,7 +80,7 @@ const CommentsSection = () =>
 {
     console.log("comments in main", commentsData)
   return (
-    <div className="mx-10 my-5 p-5 bg-gray-200 rounded-lg shadow-lg">
+    <div className="mx-10 my-5 p-5 bg-gray-200 rounded-lg shadow-lg w-[1200px]">
         <h3 className="font-bold text-lg p-5">Comments:</h3>
         <div className="">
             <CommentsList comments={commentsData}/>
