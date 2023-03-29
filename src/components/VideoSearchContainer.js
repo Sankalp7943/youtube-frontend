@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { YOUTUBE_VIDEO_SEARCH_API } from '../utils/constants'
 import ShimmerCard from './ShimmerCard'
+import VideoSearchResult from './VideoSearchResult'
 
 const VideoSearchContainer = () => {
   const [videoSearchResults, setVideoSearchResults] = useState([])
@@ -12,25 +13,25 @@ const VideoSearchContainer = () => {
 
 
   useEffect(()=>{
-    const results = getVideoSearchQueryResults()
-    setVideoSearchResults(results)
-  }, searchParams)
+    getVideoSearchQueryResults()
+  }, [] )
 
   const getVideoSearchQueryResults = async() => {
     const data = await fetch(YOUTUBE_VIDEO_SEARCH_API.replace("[videoSearchQuery]", videoSearchQuery))
     const dataJson = await data.json()
+    setVideoSearchResults(dataJson.items)
     console.log("video search results", dataJson.items)
-    return dataJson.items
+
   }
 
   if (videoSearchResults === undefined || videoSearchResults.length === 0){
     return (<ShimmerCard />)
   }
-
+  console.log("tata", videoSearchResults)
 
   return (
     <div className='m-2 p-2'>
-      
+      {[videoSearchResults].map((index)=><VideoSearchResult key={videoSearchResults[index]} videoResult={videoSearchResults[index]}/>)}
     </div>
   )
 }
