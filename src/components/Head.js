@@ -43,8 +43,8 @@ const Head = () => {
     )
   }
 
-  const openSuggestion = (suggestion) => {
-    return window.open(WEBSITE_URL + "search?s="+suggestion,"_self")
+  const openSuggestion = (suggestion) => {    
+    window.open(WEBSITE_URL + "search?s="+suggestion,"_self")
   }
 
   return (
@@ -58,7 +58,7 @@ const Head = () => {
         <div className='col-span-10'>
           <div>
             <input value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} type="text" className='align-middle h-8 border border-gray-400 rounded-l-full px-6 w-1/2 bg-gray-100 focus:outline-none focus:bg-gray-300 focus:border-gray-500 hover:border-1'></input>
-            <button type="submit" className='align-middle h-8 border border-gray-400 rounded-r-full px-4 hover:border-1 hover:bg-gray-300 focus:bg-gray-400'>&#128269;</button>
+            <button type="submit" onClick={()=>openSuggestion(searchQuery)} className='align-middle h-8 border border-gray-400 rounded-r-full px-4 hover:border-1 hover:bg-gray-300 focus:bg-gray-400'>&#128269;</button>
           </div>
           <div className='fixed bg-gray-100 w-1/3 shadow-md rounded-lg mx-2 border border-gray-200' >
             <ul>

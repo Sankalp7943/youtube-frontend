@@ -31,7 +31,7 @@ const VideoSearchContainer = () => {
 
   return (
     <div className='m-2 p-2'>
-      {[videoSearchResults].map((index)=><VideoSearchResult key={videoSearchResults[index]} videoResult={videoSearchResults[index]}/>)}
+      {Object.keys(videoSearchResults).map((index)=><VideoSearchResult key={videoSearchResults[index]} videoResult={videoSearchResults[index]}/>)}
     </div>
   )
 }
