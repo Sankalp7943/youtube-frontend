@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addMessage } from '../utils/chatSlice'
 import ChatMessage from './ChatMessage'
+import { v4 as uuidv4 } from 'uuid'
 
 const LiveChat = () => {
     const dispatch = useDispatch()
@@ -33,7 +34,7 @@ const LiveChat = () => {
   return (
     <div className='h-[600px] w-full bg-gray-200 rounded-lg shadow-2xl'>
         <div className='p-5 h-[530px] w-full overflow-y-scroll flex flex-col-reverse'>
-            {ChatMessages.map((msg, index)=><ChatMessage key={index} name={msg.name} message={msg.message}/>)}
+            {ChatMessages.map((msg)=><ChatMessage key={uuidv4()} name={msg.name} message={msg.message}/>)}
         </div>
         <form onSubmit={
             (e)=>{e.preventDefault()

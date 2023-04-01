@@ -1,4 +1,5 @@
 import React from "react"
+import { v4 as uuidv4 } from 'uuid'
 
 const commentsData = 
 [{
@@ -65,9 +66,9 @@ const Comment = ({ data }) => {
 const CommentsList = ({comments}) => {
     console.log("comments array", comments)
     return (
-        comments.map((comment, index) => {return (
+        comments.map((comment) => {return (
         <div>
-            <Comment key={index} data={comment} />
+            <Comment key={uuidv4()} data={comment} />
                 <div className="ml-8 pl-6 border-l-black border">
                     <CommentsList comments={comment.replies}/>
                 </div>

@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { YOUTUBE_VIDEO_SEARCH_API } from '../utils/constants'
-import ShimmerCard from './ShimmerCard'
+import ShimmerSearchCard from './ShimmerSearchCard'
 import VideoSearchResult from './VideoSearchResult'
+import { v4 as uuidv4 } from 'uuid'
 
 const VideoSearchContainer = () => {
   const [videoSearchResults, setVideoSearchResults] = useState([])
@@ -25,13 +26,13 @@ const VideoSearchContainer = () => {
   }
 
   if (videoSearchResults === undefined || videoSearchResults.length === 0){
-    return (<ShimmerCard />)
+    return (<ShimmerSearchCard />)
   }
   console.log("tata", videoSearchResults)
 
   return (
     <div className='m-2 p-2'>
-      {Object.keys(videoSearchResults).map((index)=><VideoSearchResult key={videoSearchResults[index]} videoResult={videoSearchResults[index]}/>)}
+      {Object.keys(videoSearchResults).map((index)=><VideoSearchResult key={uuidv4()} videoResult={videoSearchResults[index]}/>)}
     </div>
   )
 }

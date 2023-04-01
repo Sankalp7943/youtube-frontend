@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice'
 import { WEBSITE_URL, YOUTUBE_SEARCH_API } from '../utils/constants'
 import { cacheResults } from '../utils/searchSlice'
+import { v4 as uuidv4 } from 'uuid'
 
 const Head = () => {
   const searchCache = useSelector((store)=>store.search)
@@ -62,7 +63,7 @@ const Head = () => {
           </div>
           <div className='fixed bg-gray-100 w-1/3 shadow-md rounded-lg mx-2 border border-gray-200' >
             <ul>
-              {suggestions.map(s=><li key={s} onClick={()=>openSuggestion(s)} className='hover:bg-gray-300 px-2 rounded-lg hover:shadow-lg m-1'>{s}</li>)}
+              {suggestions.map(s=><li key={uuidv4()} onClick={()=>openSuggestion(s)} className='hover:bg-gray-300 px-2 rounded-lg hover:shadow-lg m-1'>{s}</li>)}
             </ul>
           </div>
         </div>
