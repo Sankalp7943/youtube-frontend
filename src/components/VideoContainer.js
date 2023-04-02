@@ -21,9 +21,9 @@ const VideoContainer = () => {
     )
   }
   return (
-    <div className='grid mx-auto px-2 gap-0 flex-wrap 3xl:grid-cols-6 2xl:grid-cols-6 xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2'>
+    <div className='grid m-auto px-2 gap-0 flex-wrap 3xl:grid-cols-6 2xl:grid-cols-6 xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 first-line:'>
       {videos.map(video => (
-		<div className='mx-2 col-span-1'>
+		<div className='m-auto col-span-1'>
 			<Link key={video.id} to={"/watch?v=" + video.id}>
 			<VideoCard info={video}/>
 			</Link>
