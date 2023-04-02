@@ -49,16 +49,18 @@ const Head = () => {
   }
 
   return (
-    <div className='grid grid-flow-col p-4 px-5 shadow-lg bg-gray-200 sticky top-0'>
-        <div className='flex col-span-1'>
+    <div className='grid grid-flow-col p-4 px-5 shadow-lg bg-gray-200 sticky top-0 z-100'>
+        <div className='flex col-span-2'>
             <img onClick={()=>toggleMenuHandler()} className='cursor-pointer h-8 hover:bg-gray-300 border rounded-full' alt='menu-icon' src='https://cdn-icons-png.flaticon.com/512/7216/7216128.png'></img>
             <a href="/">
-              <img className='h-8 p-1 mx-5 hover:shadow-lg hover:shadow-red-500/50 hover:bg-red-500/50 rounded-lg' alt='youtube-logo' src='https://icon-library.com/images/youtube-logo-icon-png/youtube-logo-icon-png-25.jpg'></img>
+            <img className='h-8 p-1 mx-5 hover:shadow-lg hover:shadow-red-500/50 hover:bg-red-500/50 rounded-lg landscape:hidden' alt='youtube-logo' src='https://icon-library.com/images/youtube-like-icon-png/youtube-like-icon-png-27.jpg'></img>
+            <img className='h-8 p-1 mx-5 hover:shadow-lg hover:shadow-red-500/50 hover:bg-red-500/50 rounded-lg portrait:hidden' alt='youtube-logo' src='https://icon-library.com/images/youtube-logo-icon-png/youtube-logo-icon-png-25.jpg'></img>
             </a>
         </div>
-        <div className='col-span-10'>
+        <div className='col-span-9'>
           <div>
-            <input value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} type="text" className='align-middle h-8 border border-gray-400 rounded-l-full px-6 w-1/2 bg-gray-100 focus:outline-none focus:bg-gray-300 focus:border-gray-500 hover:border-1'></input>
+          <input value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} type="text" className='align-middle h-8 border border-gray-400 rounded-l-full px-4 w-3/4 landscape:hidden bg-gray-100 focus:outline-none focus:bg-gray-300 focus:border-gray-500 hover:border-1'></input>
+            <input value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} type="text" className='align-middle h-8 border border-gray-400 rounded-l-full px-6 w-1/2 portrait:hidden bg-gray-100 focus:outline-none focus:bg-gray-300 focus:border-gray-500 hover:border-1'></input>
             <button type="submit" onClick={()=>openSuggestion(searchQuery)} className='align-middle h-8 border border-gray-400 rounded-r-full px-4 hover:border-1 hover:bg-gray-300 focus:bg-gray-400'>&#128269;</button>
           </div>
           <div className='fixed bg-gray-100 w-1/3 shadow-md rounded-lg mx-2 border border-gray-200' >
