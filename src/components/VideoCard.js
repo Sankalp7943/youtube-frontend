@@ -30,7 +30,7 @@ const VideoCard = ({info}) => {
   }
 
   return (
-    <div className='flex flex-wrap m-2 p-2 w-80 landscape:h-80 portrait:h-96 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg '>
+    <div className='flex flex-wrap m-2 p-2 3xl:w-80 2xl:w-72 landscape:h-80 portrait:h-96 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg '>
       <img className='rounded-lg w-full' alt='video-thumbnail' src={thumbnails.medium.url} />
       <ul className='m-1'>
         <li className='px-1 h-20 text-ellipsis overflow-hidden font-size-sm font-medium'>{shortenTitle(title)}</li>
